@@ -1,0 +1,237 @@
+/* =========================
+   style2024.css
+   Trendy webdesign 2024
+   ========================= */
+
+/* 1. Zmienne CSS (Kolorystyka i typografia) */
+:root {
+  --primary-color: #7b4b94;
+  --secondary-color: #f6f0f6;
+  --text-color: #212121;
+  --heading-font: 'Poppins', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+
+  /* Efekt glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.3);
+
+  /* Wielkości czcionek (fluid typography) */
+  --font-size-small: clamp(0.9rem, 1vw, 1rem);
+  --font-size-base: clamp(1rem, 1.2vw, 1.25rem);
+  --font-size-large: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Dark Mode – wykorzystanie prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #ae81ff;
+    --secondary-color: #e7e7e7;
+    --text-color: #535353;
+    --glass-bg: rgba(192, 192, 192, 0.6);
+    --glass-border: rgba(71, 71, 71, 0.2);
+  }
+}
+
+/* Reset lub "normalize" CSS (opcjonalnie) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Podstawowe style stron */
+body {
+  font-family: var(--body-font);
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  background: var(--secondary-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0 auto;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+/* 2. Nawigacja */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--secondary-color);
+}
+
+/* 3. Sekcja "O mnie" */
+.about-me {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+.about-me h2 {
+  font-size: var(--font-size-large);
+  margin-bottom: 1rem;
+}
+
+.about-me p {
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.main-artwork {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 4. Galeria zdjęć – użycie grid lub flex */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 5. CTA (Call to Action) */
+.cta {
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+}
+
+.cta h3 {
+  font-size: var(--font-size-large);
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary-color);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: #5a3470;
+  transform: translateY(-3px);
+}
+
+/* 6. Stopka */
+footer {
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: var(--font-size-small);
+  background: var(--primary-color);
+  color: #fff;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* 7. Przykładowe animacje i pseudo-elementy */
+.blog-title {
+  font-size: var(--font-size-large);
+  position: relative;
+}
+
+/* Podkreślenie przy najechaniu myszką na tytuł */
+.blog-title::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.4s ease;
+  margin: 0 auto;
+}
+
+.blog-title:hover::after {
+  width: 100%;
+}
+
+/* 8. Responsywność (media queries) */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .about-me {
+    padding: 0 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    margin: 1rem 0;
+  }
+}

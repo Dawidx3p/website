@@ -1,0 +1,122 @@
+/* 
+  style-override-2024.css
+  ------------------------------------
+  Nadpisuje wybrane reguły z style.css
+  Trendy webdesign 2024:
+  - Glassmorphism
+  - Subtelne gradienty
+  - Nowoczesna typografia
+*/
+
+/* 1. Zmienne uzupełniające lub nadpisujące */
+:root {
+    --color-accent: #6738d2; /* Przykładowy mocny fiolet */
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* 2. Sekcja ABOUT – nowoczesny, “glassmorphism” wygląd */
+  .about {
+    position: relative;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px 20px;
+    border-radius: 12px;
+  
+    /* Delikatne, transparentne tło i rozmycie (glassmorphism) */
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+  
+    /* Subtelny cień, nadaje wrażenie warstwowości */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    /* Dodaj gradient w tle (opcjonalnie) 
+       background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    */
+    
+    /* Transition, by animacje były płynne */
+    transition: all 0.3s ease;
+  }
+  
+  .about:hover {
+    /* Przy najechaniu – lekka zmiana, by zachęcić do interakcji */
+    transform: scale(1.01);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* 3. Tytuł, akcentowany kolor i nowoczesna typografia */
+  .about h2 {
+    font-size: 2em;
+    color: var(--color-accent);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+  }
+  
+  /* 4. Akapity – jasny tekst, lepsza czytelność na transparentnym tle */
+  .about p {
+    font-size: 1.1em;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* 5. Przykładowy przycisk CTA w sekcji .about */
+  .about .btn-cta {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1em;
+    color: #fff;
+    background-color: var(--color-accent);
+    border-radius: 50px; /* zaokrąglone krawędzie */
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(103, 56, 210, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about .btn-cta:hover {
+    background-color: #5b2fc9; /* ciemniejszy odcień fioletu */
+    box-shadow: 0 6px 20px rgba(103, 56, 210, 0.4);
+    cursor: pointer;
+  }
+  
+  /* 6. Opcjonalna animacja elementów wewnątrz .about (np. fade-in) */
+  .about > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+    /* Wstrzymaj animację i uruchom ją przy scrollu? 
+       Można użyć Intersection Observer w JS do “lazy animate”.
+    */
+  }
+  
+  /* Staggered animation (opóźnienie kolejnych elementów) */
+  .about > *:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  .about > *:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  .about > *:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  
+  /* Definicja kluczy animacji fadeInUp */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 7. Inne drobne nadpisania – przykładowo wyróżnienie linków w .about */
+  .about a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+  .about a:hover {
+    color: #4922a6;
+  }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Skontaktuj się z Joanne, artystką pełną pasji, by uzyskać informacje o zamówieniach i współpracy."/>
+  <meta name="keywords" content="Joanne-Art, kontakt, zamówienia, współpraca, media społecznościowe"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontakt – Joanne-Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Nagłówek -->
+  <header>
+    <div class="nav-container">
+      <h1 class="blog-title">Joanne-Art</h1>
+      
+      <!-- MENU DESKTOP Z DROPDOWN -->
+      <nav class="nav-desktop">
+        <ul class="nav-links-desktop">
+          <li><a href="index.html">Strona Główna</a></li>
+          <li class="dropdown">
+            <a href="#">Zobacz</a>
+            <ul class="dropdown-menu">
+              <li><a href="ozywiamy_mury.html">Ożywiamy mury</a></li>
+              <li><a href="anioly.html">Ręcznie malowane anioły</a></li>
+              <li><a href="galeria_natchnien.html">Galeria natchnień</a></li>
+              <li><a href="uchwycone_chwile.html">Uchwycone chwile</a></li>
+            </ul>
+          </li>
+          <li><a href="kontakt.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
+  
+      <!-- MENU MOBILNE Z HAMBURGEREM -->
+      <button class="nav-toggle" aria-label="Otwórz menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="nav-mobile">
+        <button class="nav-close" aria-label="Zamknij menu">
+          <i class="fa-solid fa-times"></i>
+        </button>
+        <ul class="nav-links-mobile">
+          <li><a href="index.html">Strona Główna</a></li>
+          <li><a href="ozywiamy_mury.html">Ożywiamy mury</a></li>
+          <li><a href="anioly.html">Ręcznie malowane anioły</a></li>
+          <li><a href="galeria_natchnien.html">Galeria natchnień</a></li>
+          <li><a href="uchwycone_chwile.html">Uchwycone chwile</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+  
+    </div>
+  </header>
+
+  <!-- Główna sekcja "Kontakt" -->
+  <main>
+    <section class="contact-intro">
+      <h2>Masz pomysł na wyjątkowe zamówienie?</h2>
+      <p>
+        Jeżeli szukasz oryginalnego obrazu, muralu lub innej formy sztuki – skontaktuj się 
+        ze mną. Chętnie wysłucham Twoich potrzeb i wspólnie przygotujemy projekt, który 
+        w pełni odda Twoją wizję. Każda praca powstaje z pasją i dbałością o szczegóły.
+      </p>
+      <p>
+        Napisz, jakie masz oczekiwania, a ja opowiem, co mogę dla Ciebie zrobić.
+        Cieszę się na każdą nową współpracę – zarówno z osobami prywatnymi, jak i firmami.
+      </p>
+    </section>
+  </main>
+
+  <!-- Stopka -->
+  <footer>
+    <section class="contact-tiles">
+      <!-- KAFELEK 1: Kontakt mailowy -->
+      <div class="contact-tile">
+        <!-- Ikona koperty (mail) -->
+        <div class="icon-wrapper">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h3>Napisz do mnie</h3>
+        <p>Masz pytania dotyczące zamówień lub współpracy? Skontaktuj się mailowo!</p>
+        <a href="mailto:kontakt@mojastrona.pl" class="btn-tiles">Wyślij wiadomość</a>
+      </div>
+    
+      <!-- KAFELEK 2: Media społecznościowe -->
+      <div class="contact-tile">
+        <!-- Ikona social media, np. Facebook -->
+        <div class="icon-wrapper">
+          <i class="fa-brands fa-facebook-f"></i>
+        </div>
+        <h3>Facebook</h3>
+        <p>Bądź na bieżąco z najnowszymi projektami i publikacjami.</p>
+        <a href="#" class="btn-tiles">Odwiedź profil</a>
+      </div>
+    
+      <!-- KAFELEK 3: Kolejne media, np. Instagram -->
+      <div class="contact-tile">
+        <div class="icon-wrapper">
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <h3>Instagram</h3>
+        <p>Zajrzyj za kulisy i zobacz, co nowego dzieje się w pracowni.</p>
+        <a href="#" class="btn-tiles">Obserwuj</a>
+      </div>
+    </section>
+    <p>© 2024 Joanne-Art. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,1852 @@
+/* 
+  PRZYKŁADOWY style.css
+  ---------------------
+  Skupiamy się na tym, by w sekcji .latest-works 
+  wyświetlać głównie zdjęcia, a tekst (tytuł) pojawiał się 
+  w minimalnym stopniu (np. w rogu, na hover).
+*/
+
+/* 1. RESET / MINI RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. ZMIENNE CSS (opcjonalne) */
+:root {
+  --color-bg: #f5f5f5;
+  --color-white: #fff;
+  --color-text: #333;
+  --color-primary: #7D0D5E;
+  --color-primary-dark: #9f4083;
+  --font-main: 'Arial', sans-serif;
+}
+
+/* 3. OGÓLNE STYLE */
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden; /* by uniknąć poziomego scrolla przy dużych animacjach */
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* 4. NAGŁÓWEK (HEADER) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.blog-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-links a {
+  font-size: 1em;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover {
+  border-bottom: 2px solid var(--color-primary);
+}
+.nav-links .active {
+  border-bottom: 2px solid var(--color-primary-dark);
+  color: var(--color-primary-dark);
+}
+
+/* 5. STOPKA (FOOTER) */
+footer {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  font-size: 0.9em;
+  margin-top: 30px;
+}
+
+/* 6. SEKCJA NAJNOWSZYCH PRAC (GALERIA) */
+.latest-works {
+  display: grid;
+  /* dynamiczna liczba kolumn w zależności od szerokości ekranu */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.work-item {
+  display: block;          /* Link ma formę boxu na cały kafelek */
+  position: relative;      /* by h3 można było pozycjonować absolutnie */
+  overflow: hidden;        /* ukrycie elementów wychodzących poza */
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: inherit;          /* Dziedziczy kolor tekstu z rodzica */
+  text-decoration: none;   /* Wyłączenie podkreślenia linka */
+  cursor: pointer;         /* Wyraźnie pokazuje, że to klikalne */
+}
+.work-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+/* Efekt przy najechaniu: lekkie powiększenie zdjęcia */
+.work-item:hover img {
+  transform: scale(1.05);
+}
+/* Tytuł (malutki), w rogu zdjęcia, pojawia się na hover */
+.work-item h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 5px 8px;
+  background-color: rgba(0,0,0,0.5);
+  color: var(--color-white);
+  font-size: 0.9em;
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+/* Pojawianie się tytułu, gdy najedziemy myszką na kafelek */
+.work-item:hover h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 7. PRZYKŁADOWA SEKCJA "INTRO" / NAGŁÓWEK STRONY */
+.intro {
+  text-align: center;
+  padding: 10px 5px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  max-width: 1000px;
+  margin: 10px auto;
+}
+.intro h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+.intro p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* ----------- STYLES FOR "PROCES TWÓRCZY", "INSPIRACJE", ETC. ----------- */
+/* (You can adjust them for your new sections: .process, .inspirations, etc.) */
+
+.process, .inspirations, .gallery-container, .call-to-action {
+  margin-bottom: 30px;
+  border-radius: 6px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
+.process h3, .inspirations h3, .gallery-container h3 {
+  color: var(--color-primary);
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.process p, .inspirations p {
+  color: #555;
+  margin-bottom: 15px;
+}
+.process ul, .inspirations ul {
+  list-style: disc inside;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.process li, .inspirations li {
+  margin-bottom: 8px;
+}
+
+/* Wygląd .gallery-container – jeśli używasz drugiej "galerii" w siatce */
+.gallery-container .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+/* Hover scale effect */
+.gallery-container .gallery a:hover {
+  transform: scale(1.02);
+}
+
+/* CALL TO ACTION */
+.call-to-action h3 {
+  color: var(--color-primary);
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+.call-to-action p {
+  color: #555;
+  margin-bottom: 15px;
+}
+.call-to-action .button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.call-to-action .button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* *** STYL DEDYKOWANY DLA praca-basniowy.html *** */
+/* Sekcja szczegółowa pracy */
+.work-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+/* Główny tytuł pracy */
+.work-detail h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #4D0550;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+}
+/* Główne zdjęcie pracy */
+.main-artwork {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 50vh;
+}
+.main-artwork:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+/* Akapity wewnątrz .work-detail */
+.work-detail p {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #333;
+}
+/* Mini galeria dodatkowych zdjęć wewnątrz .work-detail */
+.work-detail .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.work-detail .gallery img {
+  width: 240px;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.work-detail .gallery img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+/* Nawigacja na dole (przyciski powrotu, przejścia do kolejnej pracy) */
+.work-navigation {
+  text-align: center;
+  margin-top: 20px;
+}
+.work-navigation .button {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.work-navigation .button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Lightbox Modal */
+#lightbox-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0; 
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* in case the image is too large */
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  cursor: zoom-out;
+}
+#lightbox-modal img {
+  display: block;
+  margin: 5% auto;
+  max-width: 90%;
+  max-height: 80%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  border-radius: 4px;
+}
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: sans-serif;
+}
+#lightbox-close:hover {
+  color: #bbb;
+}
+
+/* PRZYKŁADOWY .main-banner */
+.main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+/* Styl tytułu w .main-banner */
+.main-banner h2 {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+/* LISTA KROKÓW W PROCESIE (opcjonalnie) */
+.lista {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* RESPONSYWNOŚĆ – dopasuj do własnych potrzeb */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+  .latest-works {
+    padding: 15px;
+  }
+  /* Możesz też zmniejszyć siatkę w .gallery-container */
+  .gallery-container .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-title {
+    font-size: 1.4em;
+  }
+  .intro h2 {
+    font-size: 1.6em;
+  }
+  /* Zmniejszamy kolumny w .latest-works jeszcze bardziej, jeśli chcesz */
+}
+
+.about-me {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* Styl nawigacji głównej */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem; /* Odstępy między elementami menu */
+}
+
+.nav-links li {
+  position: relative; /* Ustawienie pozycji względem li (dla dropdown) */
+}
+
+.nav-links a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease;
+}
+
+/* Dodaj tło głównego paska menu – można także w .nav-container */
+.nav-container {
+  padding: 1rem 2rem;
+}
+
+/* Efekt przy najechaniu na linki główne */
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown-menu jest ukryte domyślnie */
+.dropdown-menu {
+  display: none;   
+  position: absolute; 
+  top: 100%;        /* bezpośrednio pod przyciskiem "Zobacz" */
+  left: 0;          /* wyrównanie do lewej krawędzi rodzica */
+  list-style: none;
+  background-color: #eaeaea; /* lub inny kolor tła podmenu */
+  padding: 0.5rem 0;
+  margin: 0;
+  border-radius: 4px;
+  min-width: 180px; /* szerokość w razie potrzeby */
+  z-index: 999;     /* aby menu było „nad” innymi elementami */
+}
+
+/* Poszczególne linki w dropdown-menu */
+.dropdown-menu li a {
+  display: block; 
+  white-space: nowrap; /* żeby się nie zawijały */
+}
+
+/* Wyświetlanie dropdown po najechaniu kursorem */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* =========================================================
+   DODATKOWE STYLE DO STRONY GŁÓWNEJ – PEŁNOEKRANOWE BLOKI
+   ========================================================= */
+
+/* Każda sekcja .story-block będzie zajmować całą wysokość okna (viewport) */
+.story-block {
+  position: relative;           /* umożliwia użycie position: absolute w :before */
+  min-height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* ... inne potrzebne style ... */
+}
+
+/* PSEUDO-ELEMENT Z GRADIENTEM */
+.story-block::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; left:0; right:0; bottom:0; */
+  /* Gradient: środek biel, a góra/dół przechodzi w przezroczystość */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,     /* przezroczysty na samej górze */
+    rgba(255, 255, 255, 0.4) 25%,    /* od 25% zaczyna się biały */
+    rgba(255, 255, 255, 0.4) 75%,    /* do 75% biały */
+    rgba(255, 255, 255, 0) 100%    /* i wraca do przezroczystości na dole */
+  );
+  z-index: 1; /* aby pseudo-element był nad tłem, ale pod treścią */
+}
+
+/* Kontener z treścią ma wyższy z-index i ciemny kolor tekstu */
+.story-block .content-panel {
+  position: relative;
+  z-index: 2; 
+  color: #333;             /* ciemny tekst na jasnym tle */
+  max-width: 600px;        /* np. szerokość dla tekstu */
+  padding: 2rem;           /* odstępy, by tekst nie „kleił się” do krawędzi */
+  /* możesz pominąć półprzezroczyste tło, bo gradient daje już kontrast */
+}
+
+.story-block .content-panel h2,
+.story-block .content-panel p {
+  margin-bottom: 1rem; 
+}
+
+/* Przyciski/CTA – przykładowe style */
+.story-block .content-panel .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.story-block .content-panel .btn:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Przykładowe różne tła dla poszczególnych bloków */
+.first-block {
+  background-image: url('img/aniol/small_aniol_03.jpg');
+}
+.second-block {
+  background-image: url('img/malowanie/malowanie_02.jpg');
+}
+.third-block {
+  background-image: url('img/fotografia/foto1.jpg');
+}
+
+/* Nagłówki i paragrafy wewnątrz bloków */
+.story-block h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  -webkit-text-stroke: 0.5px black;
+}
+.story-block p {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  -webkit-text-stroke: 0.3px black;
+}
+
+/* Przycisk (CTA) w blokach */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+/* Kontener, który tworzy układ książki wewnątrz .content-panel */
+.book-container {
+  display: flex;         /* 2 kolumny obok siebie */
+  gap: 2rem;             /* odstęp między "kartkami" */
+  flex-wrap: wrap;       /* dla responsywności na małych ekranach */
+}
+
+/* Każda "strona" książki */
+.page {
+  flex: 1;               /* obie kolumny o równej szerokości */
+  padding: 1rem;
+}
+
+/* Kontener na główny i dwa mniejsze bannery */
+.hero-container {
+  display: flex;       /* dzieli na kolumny (lewa/prawa) */
+  gap: 2rem;           /* odstęp między lewą a prawą częścią */
+  margin: 2rem auto;   /* nadaj odstępy od reszty strony */
+  max-width: 1200px;   /* ogranicz szerokość, by nie rozciągać się za bardzo */
+}
+
+/* Duży banner po lewej */
+.left-hero {
+  flex: 2;             /* większa szerokość niż prawa kolumna */
+  background: #f4f4f4; /* przykładowe jasne tło */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;  /* lekkie zaokrąglenie */
+}
+
+/* Kolumna po prawej z dwoma mniejszymi bannerami */
+.right-hero {
+  flex: 1;             /* węższa kolumna */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;           /* odstęp między górnym i dolnym bannerem */
+}
+
+/* Każdy mniejszy banner */
+.mini-banner {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  flex: 1;             /* zajmie dostępną wysokość w kolumnie, jeśli chcesz je wyrównać */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Przykładowy styl nagłówków, przycisków itp. */
+.left-hero h2,
+.mini-banner h3 {
+  margin-bottom: 1rem;
+}
+
+.left-hero p,
+.mini-banner p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+/* 
+   UKŁAD A'LA CD PROJEKT
+   Duży banner (left-hero) + Dwa mniejsze (right-hero)
+*/
+
+.hero-container {
+  display: flex;       /* dzieli na kolumny (lewa/prawa) */
+  gap: 2rem;           /* odstęp między lewą a prawą częścią */
+  margin: 2rem auto;   /* nadaj odstępy od reszty strony */
+  max-width: 1200px;   /* ogranicz szerokość, by nie rozciągać się za bardzo */
+}
+
+/* Duży banner po lewej */
+.left-hero {
+  flex: 2;             /* większa szerokość niż prawa kolumna */
+  background: #f4f4f4; /* przykładowe jasne tło - zmień wedle potrzeb */
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+/* Kolumna po prawej z dwoma mniejszymi bannerami */
+.right-hero {
+  flex: 1;             /* węższa kolumna */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;           /* odstęp między górnym i dolnym bannerem */
+}
+
+/* Każdy mniejszy banner w prawej kolumnie */
+.mini-banner {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  flex: 1;             /* aby oba bannery równomiernie wypełniały dostępną wysokość */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Przykładowy styl nagłówków, tekstu i przycisków */
+.left-hero h2,
+.mini-banner h3 {
+  margin-bottom: 1rem;
+}
+
+.left-hero p,
+.mini-banner p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Styl przycisków (CTA) */
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: #555;
+}
+
+/* RESPONSYWNOŚĆ – węższe ekrany */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column; /* duży i małe bannery ułożą się pionowo */
+    gap: 1rem;
+  }
+  .left-hero, .right-hero {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+/* Duży banner (lewa kolumna) */
+.left-hero {
+  background: url('img/basniowy4.jpg') center/cover no-repeat;
+  /* pozostałe style jak padding, border-radius itp. zostają bez zmian */
+}
+
+/* Górny mini-banner (prawa kolumna) */
+.mini-banner.top-banner {
+  background: url('img/fotografia/small_foto1.jpg') center/cover no-repeat;
+  /* ewentualnie dostosuj tło / wymiary */
+}
+
+/* Dolny mini-banner (prawa kolumna) */
+.mini-banner.bottom-banner {
+  background: url('img/aniol_i_natura/small_aniol_i_natura_01.jpg') center/cover no-repeat;
+  /* ewentualnie dostosuj tło / wymiary */
+}
+
+/* 
+   Dla lewego dużego banera:
+   Gradient przechodzi od białego (u dołu) do przezroczystości (wyżej),
+   a w tle widać grafikę "basniowy4.jpg".
+*/
+.left-hero {
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* tekst przy dolnej krawędzi */
+  padding: 3rem;
+  border-radius: 8px;
+  color: #333; /* ciemny tekst na jasnym gradiencie */
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.85) 0%,  /* jaśniejszy dół */
+      rgba(255, 255, 255, 0) 60%    /* przejście w przezroczystość powyżej */
+    ),
+    url('img/basniowy4.jpg') center/cover no-repeat;
+}
+
+/* 
+   Dla górnego banera po prawej (np. Fotografia):
+   Analogiczny efekt z innym tłem.
+*/
+.mini-banner.top-banner {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  border-radius: 8px;
+  color: #333;
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.85) 0%, 
+      rgba(255, 255, 255, 0.3) 60%
+    ),
+    url('img/fotografia/small_foto1.jpg') center/cover no-repeat;
+}
+
+/* 
+   Dla dolnego banera po prawej (np. Anioły):
+   Również z gradientem i innym tłem.
+*/
+.mini-banner.bottom-banner {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  border-radius: 8px;
+  color: #333;
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.85) 0%, 
+      rgba(255, 255, 255, 0.3) 60%
+    ),
+    url('img/aniol_i_natura/small_aniol_i_natura_01.jpg') center/cover no-repeat;
+}
+
+/* 
+   Drobne korekty nagłówków i akapitów wewnątrz banerów 
+   (opcjonalnie, dostosuj do własnego stylu).
+*/
+.left-hero h2,
+.mini-banner h3 {
+  margin-bottom: 0.5rem;
+}
+
+.left-hero p,
+.mini-banner p {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+/* 
+   Styl przycisków (CTA) – 
+   jeśli korzystasz z klasy .btn w tych banerach.
+*/
+.left-hero .btn, 
+.mini-banner .btn {
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  margin-top: 0.5rem; /* by nie „kleił się” do innych elementów */
+}
+.left-hero .btn:hover, 
+.mini-banner .btn:hover {
+  background: #555;
+}
+
+/* Zmieniamy styl przycisków .btn w lewym banerze i w mini-banerach */
+.left-hero .btn, 
+.mini-banner .btn {
+  background: var(--color-primary);  /* główny kolor */
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  margin: 0.5rem auto 0;  /* margines: 0.5rem od góry, auto po bokach => centrowanie */
+  display: inline-block;  /* szerokość dopasowana do zawartości */
+  text-align: center;     /* tekst w przycisku wyśrodkowany */
+}
+
+.left-hero .btn:hover, 
+.mini-banner .btn:hover {
+  background: var(--color-primary-dark);
+}
+
+/***********************************************************
+  KAFELKI KONTAKTOWE – STYL
+************************************************************/
+
+.contact-tiles {
+  display: flex;
+  flex-wrap: wrap;               /* pozwala kafelkom zawijać się na węższych ekranach */
+  gap: 2rem;                     /* odstęp między kafelkami */
+  max-width: 1200px;            /* ogranicza szerokość kontenera */
+  margin: 3rem auto;            /* wyśrodkowanie i górny/dolny margines */
+  padding: 0 2rem;              /* odstępy poziome wewnątrz sekcji */
+}
+
+.contact-tile {
+  flex: 1;                       /* każdy kafelek dopasuje się do przestrzeni */
+  min-width: 250px;             /* minimalna szerokość kafelka */
+  background: #f4f4f4;          /* przykładowe jasne tło */
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.contact-tile h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-tile p {
+  flex: 1;            /* dzięki temu przycisk będzie dociśnięty do dołu kafelka */
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+/* Styl przycisku w kafelkach */
+.btn-tiles {
+  display: inline-block;
+  text-decoration: none;
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  margin-top: auto;    /* odsuwa przycisk na dół kafelka */
+  align-self: flex-start;
+}
+
+.btn-tiles:hover {
+  background: #555;
+}
+
+/* RESPONSYWNOŚĆ: na bardzo wąskich ekranach kafelki w pionie */
+@media (max-width: 768px) {
+  .contact-tiles {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Kontener kafelków - to już masz:
+.contact-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+*/
+
+/* Każdy kafelek - to też masz:
+.contact-tile {
+  flex: 1;
+  min-width: 250px;
+  background: #f4f4f4;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+*/
+
+/* Ikona w kafelku */
+.icon-wrapper {
+  font-size: 2.5rem;    /* rozmiar ikony */
+  margin-bottom: 1rem;  /* odstęp między ikoną a nagłówkiem */
+  color: #333;          /* kolor ikony (możesz dopasować do brandingu) */
+}
+
+/* Opcjonalnie: podczas hovera zmiana koloru / efekt */
+.contact-tile:hover .icon-wrapper {
+  color: var(--color-primary); /* lub inny kolor */
+}
+
+/* Drobne korekty tytułu i przycisku */
+.contact-tile h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+.contact-tile p {
+  flex: 1; 
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+.btn-tiles {
+  display: inline-block;
+  text-decoration: none;
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  margin-top: auto; 
+  align-self: flex-start;
+}
+.btn-tiles:hover {
+  background: #555;
+}
+
+/* Efekt "uniesienia" i cienia na całym kafelku po najechaniu */
+.contact-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+/* Responsywność – wąskie ekrany: kafelki w jednej kolumnie */
+@media (max-width: 768px) {
+  .contact-tiles {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+
+.contact-intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.contact-intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.contact-intro p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Sekcja CTA zachęcająca do kontaktu */
+.call-to-action.project-contact {
+  background: #f4f4f4;       /* jasne tło dla wyróżnienia */
+  padding: 2rem;
+  margin: 2rem auto;         /* odstępy od góry i dołu */
+  text-align: center;
+  border-radius: 8px;
+  max-width: 800px;          /* ogranicza szerokość sekcji */
+}
+
+.call-to-action h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Styl przycisku (można użyć istniejącej klasy .btn-tiles) */
+.call-to-action .btn-tiles {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.call-to-action .btn-tiles:hover {
+  background: #555;
+}
+
+/********************************
+  Podstawowy układ nagłówka
+********************************/
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.blog-title {
+  color: #fff;
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+/********************************
+  MENU DESKTOP Z DROPDOWN
+********************************/
+
+
+.nav-links-desktop {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links-desktop li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+/* Dropdown styl */
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 4px;
+  padding: 0.5rem;
+  min-width: 160px;
+  z-index: 999; /* ważne, by dropdown był nad innymi elementami */
+}
+.dropdown-menu li {
+  margin-bottom: 0.5rem;
+}
+.dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Efekt: najechanie myszką na .dropdown -> pokaż .dropdown-menu */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/********************************
+  MENU MOBILNE
+********************************/
+/* Domyślnie chowamy menu mobilne i przycisk hamburger 
+   (bo chcemy, by desktop był widoczny). */
+.nav-mobile {
+  display: none;
+}
+
+.nav-links-mobile {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-links-mobile a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+/* Hamburger też domyślnie ukrywamy (bo jesteśmy w trybie desktop). */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/********************************
+  MEDIA QUERY
+  Poniżej 768px -> chowamy desktop,
+  pokazujemy mobile i hamburger
+********************************/
+@media (max-width: 768px) {
+  /* Ukrywamy menu desktop */
+  .nav-desktop {
+    display: none;
+  }
+
+  /* Pokazujemy menu mobilne, ale domyślnie "schowane" (np. display: none).
+     Włączymy je JS-em, gdy klikniemy hamburgera. */
+  .nav-mobile {
+    position: absolute;
+    top: 60px; /* wysokość nagłówka */
+    left: 0;
+    right: 0;
+    display: none; 
+    flex-direction: column;
+    padding: 1rem 2rem;
+  }
+
+  /* Gdy .nav-mobile ma klasę .active (JS), pokazujemy menu */
+  .nav-mobile.active {
+    display: flex;
+  }
+
+  /* Pokaż hamburger na mobile */
+  .nav-toggle {
+    display: block;
+  }
+}
+
+.nav-mobile {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #333;
+  display: none;
+  flex-direction: column;
+  padding: 2rem;
+  /* ... */
+  position: fixed; /* jeśli chcesz, by menu przewyższało całą stronę */
+}
+
+.nav-close {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: auto; /* wyrzuca przycisk na prawą stronę */
+  margin-bottom: 1rem;
+  align-self: flex-end;
+}
+
+/********************************
+  USTAWIENIA DLA NAGŁÓWKA (JASNE TŁO)
+********************************/
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-white); /* Jasne tło */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.blog-title {
+  color: var(--color-text); /* ewentualnie var(--color-primary) */
+  font-size: 1.8rem;
+  text-decoration: none;
+}
+
+/********************************
+  MENU DESKTOP
+********************************/
+.nav-links-desktop {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links-desktop li a {
+  /* Kolor główny linków */
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: border 0.3s, color 0.3s;
+  border: 2px solid transparent; /* początkowo brak ramki */
+}
+.nav-links-desktop li a:hover,
+.nav-links-desktop li a.active {
+  border-bottom: 2px solid var(--color-primary); /* ramka na hover i active */
+  color: var(--color-primary);            /* link pozostaje w kolorze głównym */
+}
+
+/********************************
+  MENU MOBILNE
+********************************/
+.nav-toggle {
+  display: none;  /* pokażemy w media query */
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.nav-mobile {
+  display: none;
+  position: fixed; 
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: var(--color-white);  /* jasne tło */
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.nav-mobile.active {
+  display: flex;
+}
+.nav-links-mobile {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.nav-links-mobile a {
+  color: var(--color-primary);
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid transparent; /* początkowo brak ramki */
+  transition: border 0.3s, color 0.3s;
+  /* większa czcionka i wyśrodkowanie na mobile */
+  font-size: 1.2rem; 
+  text-align: center;  
+  padding: 0.75rem 0.5rem;
+}
+.nav-links-mobile li{
+  margin-top: 0.5rem;
+}
+.nav-links-mobile a:hover,
+.nav-links-mobile a.active {
+  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+/********************************
+  MEDIA QUERIES
+********************************/
+@media (max-width: 768px) {
+  /* Ukrywamy menu desktop, pokazujemy mobilne */
+  .nav-desktop {
+    display: none;
+  }
+  .nav-toggle {
+    display: block; 
+  }
+}
+
+/********************************************
+  STYL GŁÓWNY DLA PODSTRONY "PRACA-BASNIOWY"
+********************************************/
+
+/* 1. WSTĘP / TYTUŁ PROJEKTU */
+.intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.intro .main-artwork {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+/* 2. GALERIA GŁÓWNA & 4. GALERIA INNYCH PRAC */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  justify-content: center;
+}
+.gallery a {
+  width: 240px;
+  text-decoration: none;
+}
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* 3. OPIS TECHNICZNY / PROCES */
+.process {
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+.process ul.lista {
+  margin-left: 1.5rem;  /* wcięcie dla listy wypunktowanej */
+  margin-top: 1rem;
+  list-style-type: disc;
+}
+
+/* 5. CTA: ZACHĘTA DO ZAMÓWIENIA WŁASNEGO PROJEKTU */
+.call-to-action.project-contact {
+  background: #f9f9f9;
+  padding: 2rem;
+  margin: 3rem auto;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+.call-to-action h2 {
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Przycisk w CTA (możesz użyć istniejącej .btn-tiles) */
+.call-to-action .btn-tiles {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.call-to-action .btn-tiles:hover {
+  background: #555;
+}
+
+/* STOPKA */
+footer {
+  background: #fefefe;
+  padding: 2rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Kafelki kontaktowe w stopce */
+.contact-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  justify-content: center;
+}
+
+.contact-tile {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.contact-tile .icon-wrapper {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-tile h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-tile p {
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.btn-tiles {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.btn-tiles:hover {
+  background: #555;
+}
+
+/* Tekst w stopce */
+footer p {
+  margin: 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/********************************************
+  DROBNA RESPONSYWNOŚĆ
+********************************************/
+@media (max-width: 768px) {
+
+  /* Zmniejszamy marginesy i szerokości w mobile */
+  .intro, .process, .call-to-action.project-contact {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery a {
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .contact-tiles {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+  .contact-tile {
+    max-width: 100%;
+  }
+}
+
+/* Stylizacja sekcji opisu technicznego */
+.process {
+  max-width: 800px;            /* zawężenie kolumny tekstu */
+  margin: 2rem auto;           /* odstępy od reszty strony + wyśrodkowanie */
+  padding: 1.5rem 2rem;        /* wewnętrzne marginesy */        /* delikatne, jasne tło */
+  border-radius: 8px;          /* zaokrąglenie rogów */
+  line-height: 1.6;            /* lepsza czytelność tekstu */
+  color: #333;                 /* neutralny, ciemnoszary kolor czcionki */
+}
+
+/* Akapity wewnątrz sekcji .process */
+.process p {
+  margin-bottom: 1rem;         /* odstęp dolny między akapitami */
+}
+
+/* Nagłówek w sekcji, jeśli chcesz wstawić np. <h3> "Opis techniczny" */
+.process h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  color: #444;
+  font-weight: bold;
+}
+
+/* Lista etapów (ul.lista) */
+.process ul.lista {
+  margin-left: 1.5rem;         /* wcięcie listy wypunktowanej */
+  margin-bottom: 1rem;
+  list-style-type: disc;       /* styl kropkowany */
+}
+
+.process ul.lista li {
+  margin-bottom: 0.5rem;       /* odstęp między punktami listy */
+  line-height: 1.5;
+}
+
+/* GALERIA INNYCH PRAC (.secondary-gallery) */
+.secondary-gallery {
+  margin-top: 3rem;         /* dodatkowy odstęp od poprzednich sekcji */
+  max-width: 1200px;        /* szerokość sekcji */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.secondary-gallery p {
+  margin-bottom: 1rem;
+  font-weight: 500;         /* delikatne wyróżnienie tekstu wprowadzającego */
+  color: #444;              /* nieco ciemniejszy szary */
+  text-align: center;       /* wyśrodkowanie napisu "Przykłady innych podobnych prac:" */
+}
+
+.secondary-gallery .gallery-item img {
+  border: 2px solid #eee;   /* delikatna ramka wokół miniatury */
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.secondary-gallery .gallery-item:hover img {
+  transform: scale(1.03);   /* lekki efekt powiększenia */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Stylizacja nagłówka "Przykłady innych podobnych prac:" */
+.other-works-title {
+  text-align: center;        /* wyśrodkowanie nagłówka */
+  margin: 3rem auto 2rem;    /* odstępy wokół (góra, dół) i wyśrodkowanie */
+  max-width: 800px;          /* ograniczona szerokość, jeśli chcesz */
+  padding: 0 1rem;           /* minimalny margines wewnętrzny */
+}
+
+.other-works-title h2 {
+  font-size: 1.5rem;         /* powiększenie czcionki nagłówka */
+  font-weight: 600;          /* wyróżnienie pogrubieniem */
+  color: #333;               /* ciemnoszary kolor (dostosuj do designu) */
+  margin: 0;                 /* usuń zbędne marginesy domyślne */
+  line-height: 1.3;          /* nieco ściślejsza interlinia */
+}
+
+.work-detail h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  color: #333;
+}
+
+/* 2. GALERIA U GÓRY */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  justify-content: center; /* wyśrodkowanie miniatur */
+}
+
+.gallery-item img {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 3. GŁÓWNA SEKCJA TEKSTOWA – .work-detail */
+.work-detail {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.work-detail p {
+  margin-bottom: 1.2rem;
+}
+
+.work-detail h3 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* Lista kroków (ol.lista) */
+.work-detail ol.lista {
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+.work-detail ol.lista li {
+  margin-bottom: 0.8rem;
+}
+
+/* 4. SEKCJA FAQ (.faq) */
+.faq {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.faq p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.faq p strong {
+  color: #333;
+}
+
+/* 5. CTA WEWNĄTRZ .work-detail (opcjonalny h3 + p) */
+.work-detail h3 + p {
+  margin-bottom: 2rem;
+}
+.work-navigation {
+  text-align: center;
+  margin: 2rem 0;
+}
+.work-navigation .button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.work-navigation .button:hover {
+  background: #555;
+}
+
+/* 6. SEKCJA CTA NA DOLE (.call-to-action.project-contact) */
+.call-to-action.project-contact {
+  background: #f7f7f7;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+.call-to-action h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.call-to-action p {
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+.call-to-action .btn-tiles {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.call-to-action .btn-tiles:hover {
+  background: #555;
+}
+@media (max-width: 768px) {
+
+  /* Galeria – większe zdjęcia w kolumnie */
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-item img {
+    width: 80%;
+    max-width: 400px;
+  }
+
+  /* Ograniczenie szerokości w .work-detail i CTA */
+  .work-detail,
+  .call-to-action.project-contact {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+  .faq {
+    padding: 1rem;
+  }}
+
+  /* GŁÓWNA ZAWARTOŚĆ (MAIN) – GALERIA NATCHNIEŃ */
+
+/* Sekcja wprowadzająca (.intro) */
+.intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+.intro h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.intro p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+/* Sekcja galerii (.work-detail) */
+.work-detail {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.work-detail h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.gallery-item img {
+  width: 220px;
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Sekcja procesu (.process) */
+.process {
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+.process h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.process ul {
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Inspiracje i historie (.inspirations) */
+.inspirations {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.inspirations h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+/* Sekcja FAQ (.faq) */
+.faq {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+.faq h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.faq p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+/* Scalona sekcja CTA (.call-to-action) */
+.call-to-action.project-contact {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+.call-to-action h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.call-to-action p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Przycisk w CTA */
+.call-to-action .btn-tiles {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.call-to-action .btn-tiles:hover {
+  background: #555;
+}
+
+/* RESPONSYWNOŚĆ – na urządzeniach wąskich */
+@media (max-width: 768px) {
+  .gallery-item img {
+    width: 80%;
+    max-width: 400px;
+  }
+  .faq {
+    padding: 1rem;
+  }
+}
