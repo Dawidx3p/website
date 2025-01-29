@@ -1850,3 +1850,35 @@ footer p {
     padding: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;   /* stack images vertically */
+    align-items: center;      /* center them horizontally */
+  }
+  
+  .gallery-item img {
+    width: 80%;              /* or any preferred % */
+    max-width: 400px;        /* limit the max width */
+    margin: 0 auto;          /* horizontally center the images */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Center the entire tile */
+  .contact-tiles {
+    flex-direction: column;  /* stack tiles vertically */
+    align-items: center;     /* center them horizontally */
+  }
+  .contact-tile {
+    max-width: 300px;
+    margin: 1rem auto;
+    text-align: center;      /* center tile content (including text) */
+  }
+
+  /* Center the button (whether .btn or .btn-tiles) */
+  .contact-tile .btn,
+  .contact-tile .btn-tiles {
+    margin: 0.5rem auto 0;   /* auto on sides -> horizontal centering */
+  }
+}
