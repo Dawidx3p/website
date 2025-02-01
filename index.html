@@ -2,10 +2,22 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Najświeższe aktualności i dzieła Joanne-Art – przegląd najnowszych obrazów, sesji i inspiracji."/>
+
+  <!-- Zaktualizowany meta description -->
+  <meta name="description" content="Najświeższe aktualności ze świata Joanne-Art: odkryj nowe dzieła sztuki i inspiracje powstające w pracowni artystycznej."/>
   <meta name="keywords" content="Joanne-Art, sztuka, obrazy, ilustracje, galeria"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Joanne-Art – Aktualności</title>
+
+  <!-- Zoptymalizowany tytuł strony -->
+  <title>Joanne-Art – Aktualności, nowe dzieła i inspiracje</title>
+
+  <!-- Open Graph Tags (social sharing) -->
+  <meta property="og:title" content="Joanne-Art – Aktualności, nowe dzieła i inspiracje" />
+  <meta property="og:description" content="Najświeższe informacje o sztuce i inspiracjach od Joanne-Art. Zobacz, co nowego w pracowni!" />
+  <meta property="og:image" content="URL-do-głównego-zdjęcia.jpg" />
+  <meta property="og:url" content="https://twoja-domena.pl/index.html" />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
@@ -13,7 +25,8 @@
   <!-- Nagłówek strony -->
   <header>
     <div class="nav-container">
-      <h1 class="blog-title">Joanne-Art</h1>
+      <!-- SEO CHANGE: przenosimy „Joanne-Art” z h1 do h2 -->
+      <h2 class="blog-title">Joanne-Art</h2>
       
       <!-- MENU DESKTOP Z DROPDOWN -->
       <nav class="nav-desktop">
@@ -41,7 +54,7 @@
           <i class="fa-solid fa-times"></i>
         </button>
         <ul class="nav-links-mobile">
-          <li><a href="index.html">Strona Główna</a></li>
+          <li><a href="index.html" class="active">Strona Główna</a></li>
           <li><a href="ozywiamy_mury.html">Ożywiamy mury</a></li>
           <li><a href="anioly.html">Ręcznie malowane anioły</a></li>
           <li><a href="galeria_natchnien.html">Galeria natchnień</a></li>
@@ -49,28 +62,29 @@
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
-  
     </div>
   </header>
+
+  <!-- Główny nagłówek dla strony -->
   <div class="main-banner">
     <section class="intro">
-      <h2>Za kulisami sztuki – najnowsze dzieła i inspiracje!</h2>
+      <!-- SEO CHANGE: „Za kulisami sztuki…” w h1 -->
+      <h1>Za kulisami sztuki – najnowsze dzieła i inspiracje!</h1>
+      <!-- Opcjonalnie możesz tu dodać krótki tekst w <p> z podsumowaniem lub hasłem przewodnim. -->
+      <!-- <p>Zapraszam do świata, w którym kolory, emocje i pasja łączą się, tworząc niepowtarzalne dzieła artystyczne.</p> -->
     </section>
   </div>
 
-  <!-- Sekcja intro (możesz ją skrócić lub usunąć całkowicie) -->
-
   <!-- Główna zawartość strony -->
-   
   <main>
 
+    <!-- Duży banner (lewa część ekranu) – BAŚNIOWY -->
     <div class="hero-container">
-      <!-- Duży banner (lewa część ekranu) – BAŚNIOWY -->
       <section class="left-hero">
         <h2>Ożywiamy Mury: Baśniowy Mural</h2>
         <p>
-          Dowiedz się, jak powstają murale na dużą skalę. 
-          Barwne, pełne fantazji i przyciągające wzrok dzieła na ścianach.
+          Dowiedz się, jak powstają murale na dużą skalę – barwne, pełne fantazji 
+          i przyciągające wzrok dzieła na ścianach, które tchną życie w przestrzeń miejską.
         </p>
         <a href="ozywiamy_mury.html" class="btn">Czytaj dalej</a>
       </section>
@@ -89,22 +103,21 @@
       </aside>
     </div>
 
-  <!-- Blok 2: Zapowiedź Muralu Baśniowego -->
-  <section class="story-block second-block">
-    <div class="content-panel">
-    <h2>Galeria natchnień: obrazy z sercem i pasją</h2>
-    <p>
-      Wejdź do świata, gdzie każdy obraz to wyjątkowa opowieść, malowana kolorem i emocjami.
-    </p>
-    <a href="galeria_natchnien.html" class="btn">Czytaj dalej</a>
-    </div>
-  </section>
-
+    <!-- Zapowiedź galerii -->
+    <section class="story-block second-block">
+      <div class="content-panel">
+        <h2>Galeria natchnień: obrazy z sercem i pasją</h2>
+        <p>
+          Wejdź do świata, w którym każdy obraz to wyjątkowa opowieść, 
+          malowana kolorem i emocjami, inspirowana chwilami z codzienności.
+        </p>
+        <a href="galeria_natchnien.html" class="btn">Czytaj dalej</a>
+      </div>
+    </section>
 
   </main>
 
   <!-- Stopka -->
-   
   <footer>
     <section class="contact-tiles">
       <!-- KAFELEK 1: Kontakt mailowy -->
@@ -139,6 +152,7 @@
     </section>
     <p>© 2024 Joanne-Art. Wszelkie prawa zastrzeżone.</p>
   </footer>
+
   <script src="nav.js"></script>
 </body>
 </html>

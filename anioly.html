@@ -2,10 +2,21 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Jak powstają moje anielskie dzieła – proces tworzenia krok po kroku."/>
+  <!-- Rozbudowany meta description -->
+  <meta name="description" content="Zobacz krok po kroku, jak powstają ręcznie malowane anioły na drewnie: od wyboru surowca po wykończenie. Sprawdź unikalny proces Joanne-Art."/>
   <meta name="keywords" content="anioły, drewno, malowanie, sztuka, inspiracje"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jak powstają moje anielskie dzieła – proces tworzenia krok po kroku</title>
+
+  <!-- Zaktualizowany title z nazwą Twojej marki -->
+  <title>Jak powstają moje anielskie dzieła – proces tworzenia krok po kroku | Joanne-Art</title>
+
+  <!-- Znaczniki Open Graph -->
+  <meta property="og:title" content="Jak powstają moje anielskie dzieła – proces tworzenia krok po kroku | Joanne-Art" />
+  <meta property="og:description" content="Poznaj etapy tworzenia ręcznie malowanych aniołów na drewnie autorstwa Joanne-Art." />
+  <meta property="og:image" content="URL-do-głównego-zdjęcia.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://twoja-domena.pl/anioly.html" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
@@ -14,7 +25,8 @@
   <!-- Nagłówek -->
   <header>
     <div class="nav-container">
-      <h1 class="blog-title">Joanne-Art</h1>
+      <!-- Zmieniony z h1 na h2, aby poniższy temat strony był w h1 -->
+      <h2 class="blog-title">Joanne-Art</h2>
       
       <!-- MENU DESKTOP Z DROPDOWN -->
       <nav class="nav-desktop">
@@ -50,26 +62,25 @@
           <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
-  
     </div>
   </header>
 
   <!-- Główna treść pracy -->
   <main>
     <section class="work-detail">
-      <!-- Tytuł strony -->
-      <h2>Jak powstają moje anielskie dzieła – proces tworzenia krok po kroku</h2>
+      <!-- Zmieniony na h1, aby podkreślić główny temat strony -->
+      <h1>Jak powstają moje anielskie dzieła – proces tworzenia krok po kroku</h1>
 
       <!-- GALERIA NA GÓRZE -->
       <div class="gallery">
         <a href="img/aniol/aniol_02.jpg" class="gallery-item">
-          <img src="img/aniol/small_aniol_02.jpg" alt="Etap 1 - Wybór drewna" />
+          <img src="img/aniol/small_aniol_02.jpg" alt="Ręcznie malowany anioł w fazie wyboru drewna (Etap 1)" />
         </a>
         <a href="img/aniol_2/aniol_2_01.jpg" class="gallery-item">
-          <img src="img/aniol_2/small_aniol_2_01.jpg" alt="Etap 2 - Przygotowanie podłoża" />
+          <img src="img/aniol_2/small_aniol_2_01.jpg" alt="Anioł - przygotowanie podłoża (Etap 2)" />
         </a>
         <a href="img/aniol_i_natura/aniol_i_natura_01.jpg" class="gallery-item">
-          <img src="img/aniol_i_natura/small_aniol_i_natura_01.jpg" alt="Etap 2 - Przygotowanie podłoża" />
+          <img src="img/aniol_i_natura/small_aniol_i_natura_01.jpg" alt="Anioł i natura - kolejny etap malowania" />
         </a>
         <!-- Możesz w przyszłości uzupełnić galerię o więcej zdjęć z różnych etapów tworzenia -->
       </div>
@@ -84,7 +95,7 @@
       </p>
 
       <!-- Sekcja 2: Krok po kroku – proces twórczy -->
-      <h3>Krok po kroku – proces twórczy</h3>
+      <h2>Krok po kroku – proces twórczy</h2>
       <ol class="lista">
         <li>
           <strong>Wybór drewna:</strong> 
@@ -114,7 +125,7 @@
       </ol>
 
       <!-- Sekcja 3: Pielęgnacja i unikatowość -->
-      <h3>Pielęgnacja &amp; unikatowość</h3>
+      <h2>Pielęgnacja &amp; unikatowość</h2>
       <p>
         Aby Twój anioł zawsze wyglądał pięknie, wystarczy przecierać go 
         miękką, lekko wilgotną ściereczką – bez użycia silnych detergentów. 
@@ -124,7 +135,7 @@
       </p>
 
       <!-- Sekcja 4: Najczęściej Zadawane Pytania (FAQ) -->
-      <h3>Najczęściej Zadawane Pytania</h3>
+      <h2>Najczęściej Zadawane Pytania</h2>
       <div class="faq">
         <p><strong>1. Ile czasu trwa stworzenie anioła?</strong></p>
         <p>W zależności od rozmiaru i poziomu detali – zazwyczaj od 1 do 3 tygodni.</p>
@@ -200,7 +211,42 @@
     <img id="lightbox-img" alt="fullscreen view"/>
   </div>
 
+  <!-- Skrypty -->
   <script src="script.js"></script>
   <script src="nav.js"></script>
+
+  <!-- FAQ – dane strukturalne JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ile czasu trwa stworzenie anioła?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "W zależności od rozmiaru i poziomu detali – zazwyczaj od 1 do 3 tygodni."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy mogę wybrać własne kolory?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oczywiście! Możesz zasugerować dowolną paletę barw. Razem ustalimy, które kolory najlepiej oddadzą charakter anioła."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy można dodać napis lub dedykację?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, istnieje możliwość personalizacji, np. poprzez dodanie krótkiego tekstu na skrzydle lub tylnej części anioła."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>

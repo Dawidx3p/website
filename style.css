@@ -1882,3 +1882,23 @@ footer p {
     margin: 0.5rem auto 0;   /* auto on sides -> horizontal centering */
   }
 }
+
+/* Styl dla głównego nagłówka strony (h1) */
+h1 {
+  font-size: 2rem;               /* większy rozmiar czcionki */
+  margin: 1.5rem 0;             /* odstępy od góry i dołu */
+  color: #4D0550;               /* kolor tekstu - możesz zmienić */
+  text-align: center;           /* wyśrodkowanie nagłówka */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.25); /* delikatny cień pod literami */
+  position: relative;           /* potrzebne do pseudo-elementu ::after */
+}
+
+/* Dekoracyjna kreska pod h1 (opcjonalna) */
+h1::after {
+  content: "";
+  display: block;
+  width: 60px;                   /* szerokość linii */
+  height: 3px;                   /* grubość linii */
+  background-color: #4D0550;     /* kolor linii */
+  margin: 0.5rem auto 0;        /* automatyczne wyśrodkowanie i odstępy */
+}
