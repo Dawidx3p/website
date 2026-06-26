@@ -3039,3 +3039,260 @@ svg {
     max-height: 460px;
   }
 }
+/* ==================================================
+   FINAL MOBILE TYPOGRAPHY + LAYOUT PATCH
+================================================== */
+
+@media (max-width: 680px) {
+  h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 8vw, 2.35rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  h3 {
+    font-size: clamp(1.08rem, 5vw, 1.35rem);
+    line-height: 1.18;
+  }
+
+  p,
+  li {
+    font-size: 0.97rem;
+    line-height: 1.72;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.13em;
+  }
+
+  .intro {
+    background:
+      linear-gradient(180deg, rgba(36, 24, 18, 0.18) 0%, rgba(36, 24, 18, 0.78) 100%),
+      url("img/biblioteka_mural/biblioteka.png") center / cover;
+  }
+
+  .section-heading {
+    gap: 10px;
+  }
+
+  .section-heading p:not(.eyebrow),
+  .intro p,
+  .gallery-hero p:not(.eyebrow),
+  .photo-hero__content p:not(.eyebrow),
+  .gallery-intro-block > p,
+  .photo-intro-block > p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .art-card,
+  .art-card--tall,
+  .art-card--wide,
+  .photo-card,
+  .photo-card--tall,
+  .photo-card--wide,
+  .primary-gallery .gallery-item,
+  .secondary-gallery .gallery-item {
+    aspect-ratio: 4 / 5;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: clamp(1.85rem, 9.5vw, 2.55rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 7.5vw, 2.1rem);
+  }
+
+  p,
+  li {
+    font-size: 0.95rem;
+  }
+}
+/* ==================================================
+   FINAL TYPOGRAPHY SYSTEM — DESKTOP / TABLET / MOBILE
+================================================== */
+
+h1 {
+  font-size: clamp(2.45rem, 5.4vw, 5.15rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3.6vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.038em;
+}
+
+h3 {
+  font-size: clamp(1.12rem, 1.55vw, 1.45rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+}
+
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.section-heading p:not(.eyebrow),
+.intro p,
+.left-hero p,
+.gallery-hero p:not(.eyebrow),
+.photo-hero__content p:not(.eyebrow),
+.gallery-intro-block > p,
+.photo-intro-block > p,
+.contact-intro p,
+main > .intro:has(.main-artwork) p,
+main > .process:has(.lista) p {
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.78;
+}
+
+.work-detail p,
+.about-me-content p {
+  font-size: clamp(1rem, 1.08vw, 1.06rem);
+  line-height: 1.82;
+}
+
+.eyebrow {
+  font-size: 0.74rem;
+  letter-spacing: 0.145em;
+}
+
+.blog-title {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+}
+
+.nav-links-desktop a {
+  font-size: 0.92rem;
+}
+
+.btn,
+.btn-tiles {
+  font-size: 0.92rem;
+}
+
+@media (min-width: 1180px) {
+  .intro h1,
+  .gallery-hero h1,
+  .photo-hero h1 {
+    max-width: 860px;
+  }
+
+  .intro p,
+  .gallery-hero p:not(.eyebrow),
+  .photo-hero__content p:not(.eyebrow) {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 920px) {
+  h1 {
+    font-size: clamp(2.25rem, 7.8vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 5.8vw, 3rem);
+  }
+
+  h3 {
+    font-size: clamp(1.08rem, 3vw, 1.35rem);
+  }
+
+  p,
+  li {
+    font-size: 0.98rem;
+    line-height: 1.74;
+  }
+}
+
+@media (max-width: 680px) {
+  h1 {
+    font-size: clamp(2rem, 9.6vw, 2.9rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  h2 {
+    font-size: clamp(1.58rem, 7.5vw, 2.25rem);
+    line-height: 1.08;
+  }
+
+  h3 {
+    font-size: clamp(1.05rem, 4.8vw, 1.28rem);
+    line-height: 1.18;
+  }
+
+  p,
+  li,
+  .section-heading p:not(.eyebrow),
+  .intro p,
+  .left-hero p,
+  .gallery-hero p:not(.eyebrow),
+  .photo-hero__content p:not(.eyebrow),
+  .gallery-intro-block > p,
+  .photo-intro-block > p,
+  .contact-intro p,
+  .work-detail p,
+  .about-me-content p,
+  main > .intro:has(.main-artwork) p,
+  main > .process:has(.lista) p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.125em;
+  }
+
+  .btn,
+  .btn-tiles {
+    min-height: 46px;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: clamp(1.82rem, 9vw, 2.45rem);
+  }
+
+  h2 {
+    font-size: clamp(1.42rem, 7vw, 1.95rem);
+  }
+
+  h3 {
+    font-size: clamp(1rem, 4.6vw, 1.18rem);
+  }
+
+  p,
+  li,
+  .section-heading p:not(.eyebrow),
+  .intro p,
+  .left-hero p,
+  .gallery-hero p:not(.eyebrow),
+  .photo-hero__content p:not(.eyebrow),
+  .gallery-intro-block > p,
+  .photo-intro-block > p,
+  .contact-intro p,
+  .work-detail p,
+  .about-me-content p,
+  main > .intro:has(.main-artwork) p,
+  main > .process:has(.lista) p {
+    font-size: 0.94rem;
+  }
+}
