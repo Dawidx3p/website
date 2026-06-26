@@ -2765,3 +2765,110 @@ body.no-scroll {
     border-radius: 16px;
   }
 }
+/* ==================================================
+   LIGHTBOX — MOBILE POLISH
+================================================== */
+
+@media (max-width: 680px) {
+  #lightbox-modal {
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    padding: 72px 14px 132px;
+    background: rgba(20, 12, 8, 0.92);
+  }
+
+  #lightbox-img {
+    max-width: calc(100vw - 28px);
+    max-height: calc(100dvh - 245px);
+    border-radius: 18px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  #lightbox-close {
+    top: 14px;
+    right: 14px;
+    width: 46px;
+    height: 46px;
+    background: rgba(255, 250, 243, 0.14);
+    backdrop-filter: blur(10px);
+  }
+
+  .lightbox-controls {
+    z-index: 1001;
+  }
+
+  .lightbox-arrow {
+    top: auto;
+    bottom: 76px;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 250, 243, 0.14);
+    backdrop-filter: blur(10px);
+    font-size: 1.45rem;
+  }
+
+  .lightbox-arrow--prev {
+    left: 14px;
+  }
+
+  .lightbox-arrow--next {
+    right: 14px;
+  }
+
+  .lightbox-arrow--prev:hover,
+  .lightbox-arrow--next:hover {
+    transform: translateY(0);
+  }
+
+  .lightbox-counter {
+    bottom: 88px;
+    padding: 0.54rem 0.82rem;
+    background: rgba(255, 250, 243, 0.14);
+    backdrop-filter: blur(10px);
+    font-size: 0.78rem;
+  }
+
+  .lightbox-thumbnails {
+    bottom: 12px;
+    width: calc(100vw - 24px);
+    max-width: none;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(20, 12, 8, 0.72);
+    box-shadow: 0 10px 34px rgba(0, 0, 0, 0.3);
+  }
+
+  .lightbox-thumbnail {
+    width: 58px;
+    height: 46px;
+    border-radius: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  #lightbox-modal {
+    padding: 66px 10px 126px;
+  }
+
+  #lightbox-img {
+    max-width: calc(100vw - 20px);
+    max-height: calc(100dvh - 230px);
+    border-radius: 16px;
+  }
+
+  .lightbox-arrow {
+    bottom: 72px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .lightbox-counter {
+    bottom: 83px;
+  }
+
+  .lightbox-thumbnail {
+    width: 52px;
+    height: 42px;
+  }
+}
