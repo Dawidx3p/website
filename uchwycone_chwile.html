@@ -69,115 +69,170 @@
   </header>
 
   <!-- Główna treść strony -->
-  <main>
-    <section class="work-detail">
-      <!-- SEO CHANGE: zamiana h2 -> h1 dla głównego tematu podstrony -->
-      <h1>Uchwycone chwile: magia fotografii</h1>
-      <!-- Główne zdjęcie / baner (opcjonalnie) -->
-      <img src="img/fotografia/foto1.jpg" alt="Fotografia w plenerze" class="main-artwork">
+  <main class="photo-page">
 
-      <!-- Krótki wstęp o fotografii -->
-      <p>
-        Od pierwszego naciśnięcia spustu migawki aż po postprodukcję – fotografia 
-        daje mi możliwość zatrzymania ulotnych emocji i ukazania piękna otaczającego nas świata.
-        W swojej pracy łączę kreatywne podejście z techniczną precyzją, aby 
-        każdy kadr opowiadał unikalną historię.
-      </p>
-      <p>
-        Poniżej znajdziesz kilka moich ulubionych ujęć oraz krótki opis procesu, 
-        dzięki któremu powstają te wyjątkowe fotografie.
-      </p>
-
-      <!-- Mini galeria (możesz opakować zdjęcia w <a> dla lightboxa) -->
-      <div class="gallery">
-        <a href="img/fotografia/foto4.jpg" class="gallery-item">
-          <img src="img/fotografia/small_foto4.jpg" alt="Krajobraz o wschodzie słońca">
-        </a>
-        <a href="img/fotografia/foto5.jpg" class="gallery-item">
-          <img src="img/fotografia/small_foto5.jpg" alt="Portret w czerni i bieli">
-        </a>
-        <a href="img/fotografia/foto6.jpg" class="gallery-item">
-          <img src="img/fotografia/small_foto6.jpg" alt="Detal natury">
-        </a>
+    <!-- HERO FOTOGRAFII -->
+    <section class="photo-hero">
+      <div class="photo-hero__content">
+        <p class="eyebrow">Uchwycone chwile</p>
+        <h1>Fotografia, która zatrzymuje emocje</h1>
+        <p>
+          Kadry pełne światła, nastroju i autentyczności. Tworzę fotografie,
+          które opowiadają historie — od subtelnych portretów po ujęcia natury,
+          detali i ważnych wydarzeń.
+        </p>
+        <a href="#fotografie" class="btn">Zobacz kadry</a>
       </div>
-
-      <!-- Proces fotograficzny -->
-      <p>
-        <strong>Proces tworzenia fotografii obejmuje:</strong>
-      </p>
-      <ul class="lista">
-        <li><strong>Inspiracja:</strong> poszukiwanie motywów i tematów, które przyciągają uwagę – od natury po architekturę.</li>
-        <li><strong>Praca w terenie:</strong> odpowiedni dobór sprzętu, oświetlenia i kadrów, by uchwycić atmosferę chwili.</li>
-        <li><strong>Selekcja i edycja:</strong> wybór najlepszych ujęć oraz subtelna postprodukcja (korekta kolorów, balans bieli, kontrast).</li>
-        <li><strong>Prezentacja:</strong> druk na wysokiej jakości papierze fotograficznym lub publikacja online.</li>
-      </ul>
-
-      <!-- Dodatkowa galeria / przykładowe zdjęcia (opcjonalnie) -->
-      <p>Wybrane projekty fotograficzne:</p>
-      <div class="gallery">
-        <a href="img/fotografia/foto7.jpg" class="gallery-item">
-          <img src="img/fotografia/small_foto7.jpg" alt="Sesja portretowa w plenerze">
-        </a>
-        <a href="img/fotografia/foto2.jpg" class="gallery-item">
-          <img src="img/fotografia/small_foto2.jpg" alt="Ujęcie makro kwiatów">
-        </a>
-        <a href="img/fotografia/foto3.jpg" class="gallery-item">
-          <img src="img/fotografia/small_foto3.jpg" alt="Miasto nocą">
-        </a>
-      </div>
-
-      <p>
-        Te i wiele innych prac powstawało w rozmaitych warunkach – od pełnego słońca 
-        po nocne długie czasy naświetlania. Każdy projekt jest dla mnie nowym 
-        wyzwaniem i przygodą, którą pragnę zapisać w kadrze.
-      </p>
-
+      <img src="img/fotografia/foto1.jpg" alt="Artystyczna fotografia w plenerze" class="photo-hero__image" />
     </section>
+
+    <!-- WPROWADZENIE -->
+    <section class="photo-intro-block">
+      <div>
+        <p class="eyebrow">O fotografii</p>
+        <h2>Ulotne momenty zamienione w trwałe obrazy</h2>
+      </div>
+      <p>
+        Fotografia pozwala zatrzymać to, co często trwa tylko sekundę — gest,
+        spojrzenie, światło na twarzy albo atmosferę miejsca. W pracy łączę
+        kreatywne spojrzenie z techniczną precyzją, aby każdy kadr miał własny
+        charakter i opowiadał coś więcej niż tylko to, co widać na pierwszy rzut oka.
+      </p>
+    </section>
+
+    <!-- GALERIA FOTOGRAFII -->
+    <section id="fotografie" class="photo-gallery-section">
+      <div class="section-heading">
+        <p class="eyebrow">Portfolio</p>
+        <h2>Wybrane fotografie</h2>
+        <p>
+          Przegląd kadrów z plenerów, portretów, detali natury i projektów artystycznych.
+        </p>
+      </div>
+
+      <div class="photo-masonry">
+        <a href="img/fotografia/foto4.jpg" class="photo-card photo-card--tall" title="Krajobraz o wschodzie słońca">
+          <img src="img/fotografia/small_foto4.jpg" alt="Krajobraz o wschodzie słońca" />
+          <span>Światło poranka</span>
+        </a>
+
+        <a href="img/fotografia/foto5.jpg" class="photo-card" title="Portret w czerni i bieli">
+          <img src="img/fotografia/small_foto5.jpg" alt="Portret w czerni i bieli" />
+          <span>Portret</span>
+        </a>
+
+        <a href="img/fotografia/foto6.jpg" class="photo-card" title="Detal natury">
+          <img src="img/fotografia/small_foto6.jpg" alt="Detal natury" />
+          <span>Detal natury</span>
+        </a>
+
+        <a href="img/fotografia/foto7.jpg" class="photo-card photo-card--wide" title="Sesja portretowa w plenerze">
+          <img src="img/fotografia/small_foto7.jpg" alt="Sesja portretowa w plenerze" />
+          <span>Sesja plenerowa</span>
+        </a>
+
+        <a href="img/fotografia/foto2.jpg" class="photo-card" title="Ujęcie makro kwiatów">
+          <img src="img/fotografia/small_foto2.jpg" alt="Ujęcie makro kwiatów" />
+          <span>Makro</span>
+        </a>
+
+        <a href="img/fotografia/foto3.jpg" class="photo-card photo-card--tall" title="Miasto nocą">
+          <img src="img/fotografia/small_foto3.jpg" alt="Miasto nocą" />
+          <span>Nocny kadr</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- PROCES FOTOGRAFICZNY -->
+    <section class="photo-process">
+      <div class="section-heading">
+        <p class="eyebrow">Proces</p>
+        <h2>Jak powstaje sesja?</h2>
+        <p>
+          Od pierwszego pomysłu po finalną selekcję zdjęć — każdy etap wpływa na klimat całej opowieści.
+        </p>
+      </div>
+
+      <div class="photo-process-grid">
+        <article>
+          <span>01</span>
+          <h3>Koncepcja</h3>
+          <p>Ustalamy nastrój sesji, miejsce, styl i cel zdjęć.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Światło i kadr</h3>
+          <p>Wybieram ujęcia, które najlepiej oddają emocje i atmosferę chwili.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Selekcja</h3>
+          <p>Wybieram najmocniejsze fotografie — te, które mają charakter i historię.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Postprodukcja</h3>
+          <p>Subtelna edycja koloru, kontrastu i detalu wzmacnia finalny klimat zdjęć.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RODZAJE SESJI -->
     <section class="photo-sessions">
-      <h2>Sesje zdjęciowe dopasowane do Twojej wizji</h2>
-      <p>Oferuję różnorodne sesje fotograficzne, które pozwolą uchwycić Twój wyjątkowy moment. Wybierz styl, który najbardziej Ci odpowiada!</p>
-    
+      <div class="section-heading">
+        <p class="eyebrow">Oferta</p>
+        <h2>Sesje zdjęciowe dopasowane do Twojej wizji</h2>
+        <p>
+          Wybierz charakter sesji, który najlepiej pasuje do Twojej historii.
+        </p>
+      </div>
+
       <div class="session-grid">
-        <!-- Portrety artystyczne -->
-        <div class="session-card">
-          <img src="img/uchwycone chwile/portret.png" alt="Portret artystyczny">
-          <h3>Portrety artystyczne</h3>
-          <p>Unikalne sesje ukazujące Twoją osobowość w wyjątkowy sposób.</p>
-        </div>
-    
-        <!-- Sesje plenerowe -->
-        <div class="session-card">
-          <img src="img/uchwycone chwile/natura.png" alt="Sesja plenerowa">
-          <h3>Sesje plenerowe</h3>
-          <p>Natura jako idealne tło dla Twojej historii. Magia światła i barw.</p>
-        </div>
-    
-        <!-- Fotografia eventowa -->
-        <div class="session-card">
-          <img src="img/uchwycone chwile/event.png" alt="Fotografia eventowa">
-          <h3>Fotografia eventowa</h3>
-          <p>Uchwycę najważniejsze momenty Twojego wydarzenia w artystyczny sposób.</p>
-        </div>
-    
-        <!-- Sesje rodzinne -->
-        <div class="session-card">
-          <img src="img/uchwycone chwile/rodzinna.png" alt="Sesja rodzinna">
-          <h3>Sesje rodzinne</h3>
-          <p>Ciepłe i naturalne ujęcia, które zatrzymają cenne chwile Twojej rodziny.</p>
-        </div>
+        <article class="session-card">
+          <img src="img/uchwycone chwile/portret.png" alt="Portret artystyczny" />
+          <div>
+            <h3>Portrety artystyczne</h3>
+            <p>Unikalne sesje ukazujące osobowość, emocje i indywidualny charakter.</p>
+          </div>
+        </article>
+
+        <article class="session-card">
+          <img src="img/uchwycone chwile/natura.png" alt="Sesja plenerowa" />
+          <div>
+            <h3>Sesje plenerowe</h3>
+            <p>Natura jako tło dla historii — światło, przestrzeń i naturalna atmosfera.</p>
+          </div>
+        </article>
+
+        <article class="session-card">
+          <img src="img/uchwycone chwile/event.png" alt="Fotografia eventowa" />
+          <div>
+            <h3>Fotografia eventowa</h3>
+            <p>Najważniejsze momenty wydarzenia uchwycone w estetyczny, naturalny sposób.</p>
+          </div>
+        </article>
+
+        <article class="session-card">
+          <img src="img/uchwycone chwile/rodzinna.png" alt="Sesja rodzinna" />
+          <div>
+            <h3>Sesje rodzinne</h3>
+            <p>Ciepłe i naturalne ujęcia, które zatrzymują ważne wspomnienia na lata.</p>
+          </div>
+        </article>
       </div>
     </section>
-    <section class="call-to-action project-contact">
+
+    <!-- CTA -->
+    <section class="call-to-action project-contact photo-contact">
+      <p class="eyebrow">Umów sesję</p>
       <h2>Zatrzymaj wyjątkowe chwile w obiektywie</h2>
       <p>
-        Marzysz o profesjonalnej sesji, która pokaże Twoje prawdziwe emocje?
-        A może chcesz uwiecznić ważne wydarzenie? 
-        Wspólnie zrealizujemy koncepcję i zadbamy o każdy detal – 
-        od wyboru miejsca po artystyczną postprodukcję.
+        Marzysz o profesjonalnej sesji, która pokaże prawdziwe emocje? A może chcesz
+        uwiecznić ważne wydarzenie? Wspólnie przygotujemy koncepcję i zadbamy o każdy detal.
       </p>
-      <!-- Dostosuj link do aktualnej strony kontaktowej, np. kontakt.html -->
       <a href="kontakt.html" class="btn-tiles">Umów się na sesję</a>
     </section>
+
   </main>
 
   <!-- Stopka -->
@@ -213,7 +268,7 @@
         <a href="https://www.instagram.com/joannart_heart?utm_source=ig_web_button_share_sheet&amp;igsh=ZDNlZDc0MzIxNw==" class="btn-tiles">Obserwuj</a>
       </div>
     </section>
-    <p>© 2024 Joanne-Art. Wszelkie prawa zastrzeżone.</p>
+    <p>© 2026 Joanne-Art. Wszelkie prawa zastrzeżone.</p>
   </footer>
 
   <!-- MODAL (Lightbox) STRUCTURE (pozostaje niezmienione) -->

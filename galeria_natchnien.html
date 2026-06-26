@@ -68,121 +68,182 @@
   </header>
 
   <!-- GŁÓWNA TREŚĆ STRONY -->
-  <main>
+  <main class="gallery-page">
     
-    <!-- 1. NAGŁÓWEK I WPROWADZENIE -->
-    <!-- SEO CHANGES: Zmienione z h2 na h1 -->
-    <section class="intro">
-      <h1>Galeria natchnień: obrazy z sercem i pasją</h1>
+    <!-- HERO GALERII -->
+    <section class="gallery-hero">
+      <div class="gallery-hero__content">
+        <p class="eyebrow">Galeria natchnień</p>
+        <h1>Obrazy z sercem, emocją i własną historią</h1>
+        <p>
+          Każda praca powstaje z potrzeby uchwycenia chwili, nastroju albo symbolu.
+          To galeria obrazów tworzonych z pasją — od subtelnych pejzaży po bardziej
+          intensywne, symboliczne kompozycje.
+        </p>
+        <a href="#obrazy" class="btn">Zobacz obrazy</a>
+      </div>
+    </section>
+
+    <!-- WPROWADZENIE -->
+    <section class="gallery-intro-block">
+      <div>
+        <p class="eyebrow">O kolekcji</p>
+        <h2>Sztuka, która nadaje przestrzeni osobisty charakter</h2>
+      </div>
       <p>
-        „Każdy obraz to wyjątkowa opowieść malowana kolorem i emocjami. 
-        Zanurz się w świecie, gdzie sztuka spotyka się z uczuciem, 
-        tworząc dzieła, które ożywiają przestrzeń i serca.”
+        W tej galerii znajdziesz prace inspirowane naturą, emocjami, przemijaniem
+        i codziennymi historiami. Niektóre obrazy są delikatne i kontemplacyjne,
+        inne mocniej działają kolorem, kontrastem i symbolem. Każdy z nich może stać
+        się osobistym akcentem we wnętrzu albo punktem wyjścia do indywidualnego zamówienia.
       </p>
     </section>
 
-    <!-- 2. GALERIA OBRAZÓW (SIATKA) -->
-    <section class="work-detail">
-      <h2>Galeria obrazów</h2>
-      <div class="gallery">
-        <!-- Zmienione tytuły i alt na bardziej opisowe -->
-        <a href="img/obrazy/aniol.jpg" class="gallery-item" title="Anielska kompozycja pełna ciepłych barw">
+    <!-- GALERIA OBRAZÓW -->
+    <section id="obrazy" class="art-gallery-section">
+      <div class="section-heading">
+        <p class="eyebrow">Wybrane prace</p>
+        <h2>Galeria obrazów</h2>
+        <p>
+          Przegląd wybranych realizacji — obrazów, pejzaży i kompozycji symbolicznych.
+        </p>
+      </div>
+
+      <div class="art-masonry">
+        <a href="img/obrazy/aniol.jpg" class="art-card art-card--tall" title="Anielska kompozycja pełna ciepłych barw">
           <img src="img/obrazy/small_aniol.jpg" alt="Obraz anioła w ciepłej tonacji, galeria natchnień" />
+          <span>Anielska kompozycja</span>
         </a>
-        <a href="img/obrazy/baszta.jpg" class="gallery-item" title="Ruiny baszty w wieczornym świetle">
+
+        <a href="img/obrazy/baszta.jpg" class="art-card" title="Ruiny baszty w wieczornym świetle">
           <img src="img/obrazy/baszta.jpg" alt="Pejzaż ruin baszty o zmierzchu, galeria natchnień" />
+          <span>Ruiny baszty</span>
         </a>
-        <a href="img/obrazy/golden.jpg" class="gallery-item" 
-        title="Kobieta na ciemnym tle, złote akcenty – Galeria natchnień">
-          <img src="img/obrazy/golden01.jpg" 
-            alt="Kobieta na czarnym tle z akcentami złota, galeria natchnień" />
+
+        <a href="img/obrazy/golden.jpg" class="art-card art-card--wide" title="Kobieta na ciemnym tle, złote akcenty – Galeria natchnień">
+          <img src="img/obrazy/golden01.jpg" alt="Kobieta na czarnym tle z akcentami złota, galeria natchnień" />
+          <span>Złote akcenty</span>
         </a>
-        <a href="img/obrazy/baszta2.jpg" class="gallery-item" title="Pejzaż z inną perspektywą baszty">
+
+        <a href="img/obrazy/baszta2.jpg" class="art-card" title="Pejzaż z inną perspektywą baszty">
           <img src="img/obrazy/small_baszta2.jpg" alt="Obraz ruin baszty w jasnym świetle dnia, galeria natchnień" />
+          <span>Jasna perspektywa</span>
         </a>
-        <a href="img/obrazy/smierc.jpg" class="gallery-item" title="Motyw vanitas">
+
+        <a href="img/obrazy/smierc.jpg" class="art-card art-card--tall" title="Motyw vanitas">
           <img src="img/obrazy/small_smierc.jpg" alt="Obraz nawiązujący do motywu przemijania, galeria natchnień" />
+          <span>Motyw vanitas</span>
         </a>
-        <a href="img/obrazy/baszta3.jpg" class="gallery-item" title="Kolejna wizja ruin w pastelach">
+
+        <a href="img/obrazy/baszta3.jpg" class="art-card" title="Kolejna wizja ruin w pastelach">
           <img src="img/obrazy/small_baszta3.jpg" alt="Pastelowy widok ruin baszty, galeria natchnień" />
+          <span>Pastelowa wizja</span>
         </a>
-        <a href="img/obrazy/pory_roku01.jpg" class="gallery-item" title="Pejzaż z inną perspektywą baszty">
-          <img src="img/obrazy/pory_roku1.jpg" alt="Obraz ruin baszty w jasnym świetle dnia, galeria natchnień" />
+
+        <a href="img/obrazy/image.png" class="art-card" title="Pory roku — pierwsza praca z cyklu">
+          <img src="img/obrazy/image.png" alt="Pierwszy obraz z cyklu pory roku, galeria natchnień" />
+          <span>Pory roku I</span>
         </a>
-        <a href="img/obrazy/pory_roku02.jpg" class="gallery-item" title="Motyw vanitas">
-          <img src="img/obrazy/pory_roku2.jpg" alt="Obraz nawiązujący do motywu przemijania, galeria natchnień" />
+
+        <a href="img/obrazy/pory_roku02.jpg" class="art-card art-card--wide" title="Pory roku — druga praca z cyklu">
+          <img src="img/obrazy/pory_roku2.jpg" alt="Drugi obraz z cyklu pory roku, galeria natchnień" />
+          <span>Pory roku II</span>
         </a>
-        <a href="img/obrazy/pory_roku03.jpeg" class="gallery-item" title="Kolejna wizja ruin w pastelach">
-          <img src="img/obrazy/pory_roku3.jpeg" alt="Pastelowy widok ruin baszty, galeria natchnień" />
+
+        <a href="img/obrazy/pory_roku03.jpeg" class="art-card" title="Pory roku — trzecia praca z cyklu">
+          <img src="img/obrazy/pory_roku3.jpeg" alt="Trzeci obraz z cyklu pory roku, galeria natchnień" />
+          <span>Pory roku III</span>
         </a>
       </div>
     </section>
 
-    <!-- 3. PROCES TWÓRCZY OBRAZÓW -->
-    <!-- Zmieniamy z h3 na h2, bo to kolejna sekcja główna na stronie -->
-    <section class="process">
-      <h2>Proces twórczy obrazów</h2>
-      <p>
-        Od chwili, gdy pojawia się <em>pomysł</em>, aż do ostatnich pociągnięć pędzla – 
-        każdy obraz przechodzi długą drogę. Inspirowane życiem, emocjami i naturą, 
-        wizje najpierw przybierają formę szkiców, a następnie powstają na płótnie 
-        czy innym podłożu krok po kroku.
-      </p>
-      <ul>
-        <li><strong>Inspiracja i szkic:</strong> Pomysł trafia na papier w formie szybkiej notatki lub rysunku.</li>
-        <li><strong>Dobór kolorów i kompozycji:</strong> W tym etapie decyduję o klimacie pracy, kluczowych elementach i harmonii barw.</li>
-        <li><strong>Warstwa po warstwie:</strong> Nakładam farby, bawiąc się fakturą i światłem, by oddać nastrój chwili.</li>
-        <li><strong>Ostatnie szlify:</strong> Detale, rozjaśnienia i werniks, które uwieczniają dzieło w finalnej formie.</li>
-      </ul>
+    <!-- PROCES TWÓRCZY -->
+    <section class="creative-process">
+      <div class="section-heading">
+        <p class="eyebrow">Proces</p>
+        <h2>Jak powstaje obraz?</h2>
+        <p>
+          Od pierwszej inspiracji do finalnych detali — każdy etap ma znaczenie dla charakteru pracy.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <article>
+          <span>01</span>
+          <h3>Inspiracja i szkic</h3>
+          <p>Pomysł trafia na papier w formie szybkiej notatki, kompozycji albo prostego szkicu.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Kolor i nastrój</h3>
+          <p>Dobieram paletę, światło i układ elementów, aby obraz miał własny klimat.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Warstwy i faktura</h3>
+          <p>Praca powstaje stopniowo — przez nakładanie farb, budowanie głębi i detalu.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Ostatnie szlify</h3>
+          <p>Detale, rozjaśnienia i wykończenie nadają dziełu finalny charakter.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- 4. INSPIRACJE I HISTORIE -->
-    <!-- Zmieniamy z h3 na h2 (sekcja główna) -->
-    <section class="inspirations">
-      <h2>Inspiracje i historie</h2>
-      <p>
-        Każde dzieło ma swoją opowieść. Czasem jest nią spacer w porannej mgle, 
-        innym razem rozmowa z przyjacielem. Przykładowo:
-      </p>
-      <ul>
-        <li>
-          <strong>„Blask poranka”:</strong> Powstał po magicznym wschodzie słońca nad jeziorem. 
-          Ciche refleksy na tafli wody ukształtowały paletę barw.
-        </li>
-        <li>
-          <strong>„Tęsknota”:</strong> Zainspirowana emocjami towarzyszącymi rozłące, 
-          a jednocześnie nadziei na ponowne spotkanie.
-        </li>
-      </ul>
+    <!-- INSPIRACJE -->
+    <section class="story-cards-section">
+      <div class="section-heading">
+        <p class="eyebrow">Historie</p>
+        <h2>Inspiracje ukryte w obrazach</h2>
+      </div>
+
+      <div class="story-cards">
+        <article>
+          <h3>Blask poranka</h3>
+          <p>
+            Obraz inspirowany spokojem wschodu słońca, ciszą natury i miękkim światłem,
+            które zmienia zwykły pejzaż w coś bardziej osobistego.
+          </p>
+        </article>
+        <article>
+          <h3>Tęsknota</h3>
+          <p>
+            Kompozycja zbudowana wokół emocji rozłąki, oczekiwania i nadziei na ponowne spotkanie.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <!-- 5. NOWA SEKCJA FAQ -->
-    <!-- Zmieniamy z h3 na h2 -->
-    <section class="faq">
-      <h2>Najczęściej zadawane pytania (FAQ)</h2>
-      <p><strong>1. Czy można zamówić obraz na podstawie własnej wizji?</strong><br/>
-         Tak, chętnie realizuję spersonalizowane projekty – wspólnie ustalimy temat, kolorystykę i format.
-      </p>
-      <p><strong>2. Jak długo trwa stworzenie obrazu?</strong><br/>
-         Zależy od rozmiaru i poziomu detali, ale zwykle od 1 do 3 tygodni.
-      </p>
-      <p><strong>3. Czy wykonujesz tylko prace na płótnie?</strong><br/>
-         Nie, tworzę też na innych podłożach (np. deski, papier akwarelowy), w zależności od koncepcji.
-      </p>
+    <!-- FAQ -->
+    <section class="faq gallery-faq">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Najczęściej zadawane pytania</h2>
+      </div>
+
+      <div class="faq-list">
+        <article>
+          <h3>Czy można zamówić obraz na podstawie własnej wizji?</h3>
+          <p>Tak, chętnie realizuję spersonalizowane projekty — wspólnie ustalimy temat, kolorystykę i format.</p>
+        </article>
+        <article>
+          <h3>Jak długo trwa stworzenie obrazu?</h3>
+          <p>Zależy od rozmiaru i poziomu detali, ale zwykle od 1 do 3 tygodni.</p>
+        </article>
+        <article>
+          <h3>Czy wykonujesz tylko prace na płótnie?</h3>
+          <p>Nie, tworzę też na innych podłożach, na przykład na desce albo papierze akwarelowym.</p>
+        </article>
+      </div>
     </section>
 
-    <!-- 6. SCALONE CTA: JEDNA WIĘKSZA SEKCJA (dalej h2, bo to kolejny blok główny) -->
-    <section class="call-to-action project-contact">
-      <h2>Wnieś sztukę do swojego świata!</h2>
+    <!-- CTA -->
+    <section class="call-to-action project-contact gallery-contact">
+      <p class="eyebrow">Zamówienie indywidualne</p>
+      <h2>Wnieś sztukę do swojego świata</h2>
       <p>
-        Marzysz o płótnie stworzonym wyłącznie dla Ciebie? 
-        Opowiedz mi o swojej wizji, a razem przygotujemy projekt, 
-        który odzwierciedli Twój styl i osobowość. 
-        Każdy obraz powstaje z sercem, by nadać przestrzeni niepowtarzalny charakter.
-      </p>
-      <p>
-        Skontaktuj się ze mną, aby omówić zamówienie autorskiego obrazu 
-        lub poznać kulisy mojej pracy. Niech kolor i pasja rozświetlą Twoją przestrzeń!
+        Masz pomysł na obraz albo chcesz stworzyć wyjątkowy prezent? Opowiedz o swojej wizji,
+        a wspólnie przygotujemy projekt dopasowany do Twojej przestrzeni i emocji.
       </p>
       <a href="kontakt.html" class="btn-tiles">Skontaktuj się</a>
     </section>
@@ -222,7 +283,7 @@
         <a href="https://www.instagram.com/joannart_heart?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn-tiles">Obserwuj</a>
       </div>
     </section>
-    <p>© 2024 Joanne-Art. Wszelkie prawa zastrzeżone.</p>
+    <p>© 2026 Joanne-Art. Wszelkie prawa zastrzeżone.</p>
   </footer>
 
   <!-- MODAL (Lightbox) STRUCTURE (jeśli używasz skryptu do powiększeń) -->
