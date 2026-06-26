@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap");
 /* ==============================
    JOANNE-ART — CORE + HOME CSS
    ============================== */
@@ -21,6 +22,7 @@
     --section-y: clamp(64px, 9vw, 112px);
     --font-main: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --font-display: Georgia, "Times New Roman", serif;
+   --font-brand: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   }
   
   * {
@@ -188,11 +190,13 @@
   }
   
   .blog-title {
-    font-family: var(--font-display);
-    font-size: clamp(1.45rem, 2.5vw, 2.05rem);
-    font-weight: 500;
-    letter-spacing: -0.04em;
+    font-family: var(--font-brand);
+    font-size: clamp(1.7rem, 3vw, 2.55rem);
+    font-weight: 600;
+    letter-spacing: -0.055em;
+    line-height: 1;
     white-space: nowrap;
+    margin-left: 1rem;
   }
   
   .nav-desktop {
@@ -284,6 +288,7 @@
       url("img/biblioteka_mural/biblioteka.png") center / cover;
     box-shadow: var(--shadow-soft);
     align-content: end;
+    margin-bottom: 1.3rem;
   }
   
   .intro::after {
@@ -3173,7 +3178,10 @@ main > .process:has(.lista) p {
 }
 
 .blog-title {
-  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-family: var(--font-brand);
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
 }
 
 .nav-links-desktop a {
@@ -3294,5 +3302,27 @@ main > .process:has(.lista) p {
   main > .intro:has(.main-artwork) p,
   main > .process:has(.lista) p {
     font-size: 0.94rem;
+  }
+}
+/* ==================================================
+   BRAND WORDMARK — JOANNE-ART
+================================================== */
+
+.blog-title {
+  font-family: var(--font-brand);
+  font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  color: var(--color-text);
+}
+
+.blog-title::first-letter {
+  letter-spacing: -0.08em;
+}
+
+@media (max-width: 680px) {
+  .blog-title {
+    font-size: clamp(1.55rem, 8vw, 2rem);
   }
 }
